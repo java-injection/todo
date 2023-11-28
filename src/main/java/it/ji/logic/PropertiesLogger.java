@@ -2,15 +2,15 @@ package it.ji.logic;
 
 import it.ji.properties.Configurations;
 
-public class MiscLogger {
-    private static MiscLogger instance = null;
+public class PropertiesLogger {
+    private static PropertiesLogger instance = null;
 
-    private MiscLogger() {
+    private PropertiesLogger() {
     }
 
-    public static MiscLogger getInstance() {
+    public static PropertiesLogger getInstance() {
         if (instance == null) {
-            instance = new MiscLogger();
+            instance = new PropertiesLogger();
         }
         return instance;
     }
