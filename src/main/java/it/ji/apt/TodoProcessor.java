@@ -2,6 +2,7 @@ package it.ji.apt;
 
 import com.google.auto.service.AutoService;
 import it.ji.annotations.Todo;
+import it.ji.logic.PropertiesLogger;
 
 import java.util.Set;
 import javax.annotation.processing.*;
@@ -15,6 +16,7 @@ import javax.tools.Diagnostic;
 public class TodoProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+        PropertiesLogger.getInstance().log("Processing annotations");
         for (Element elem : roundEnv.getElementsAnnotatedWith(Todo.class)) {
             Todo todo = elem.getAnnotation(Todo.class);
             processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,
