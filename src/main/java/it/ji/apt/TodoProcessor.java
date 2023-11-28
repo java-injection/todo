@@ -17,7 +17,9 @@ public class TodoProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         PropertiesLogger.getInstance().log("Processing annotations");
+        System.out.println("WARNING: This is a dummy annotation processor, it does not do anything!");
         for (Element elem : roundEnv.getElementsAnnotatedWith(Todo.class)) {
+            System.out.println("[INFO] Found a method with a TODO annotation!");
             Todo todo = elem.getAnnotation(Todo.class);
             processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,
                     "Method '" + elem.getSimpleName() + "' has a TODO: " + todo.description());
