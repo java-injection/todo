@@ -10,11 +10,20 @@ import java.util.List;
 public class ClickUpAPI {
 
     private static ClickUpAPI _instance = null;
-    private static final String API_TOKEN = "APY_TOKEN";
+    private static String API_TOKEN = "API_TOKEN";
     private static final String BASE_URL = "https://api.clickup.com/api/v2";
 
     private final OkHttpClient client;
     private ClickUpAPI(){
+        //load env variables called API_TOKEN
+        String apiToken = System.getenv("API_TOKEN");
+        if (apiToken != null) {
+            System.out.println("API_TOKEN: " + apiToken);
+        } else {
+            System.out.println("API_TOKEN non è impostato.");
+        }
+        API_TOKEN = apiToken;
+
         client = new OkHttpClient();
     }
 
