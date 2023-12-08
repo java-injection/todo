@@ -1,5 +1,8 @@
 package it.ji.annotations;
 
+import it.ji.logic.PropertiesLogger;
+import it.ji.properties.Configurations;
+
 import java.lang.annotation.*;
 import java.util.Date;
 
@@ -20,7 +23,7 @@ public @interface Todo {
     String title() default "";
     String description() default "";
     String dueDate() default "";
-    Priority priority() default Priority.NONE;
+    Priority priority() default Priority.DEFAULT;
     TaskManager taskManager() default TaskManager.CLICKUP;
 
 }

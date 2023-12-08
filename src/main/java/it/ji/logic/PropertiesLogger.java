@@ -1,5 +1,6 @@
 package it.ji.logic;
 
+import it.ji.annotations.Priority;
 import it.ji.properties.Configurations;
 
 public class PropertiesLogger {
@@ -22,4 +23,6 @@ public class PropertiesLogger {
             System.out.println(sb.toString());
         }
     }
+
+
 }

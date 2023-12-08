@@ -1,5 +1,7 @@
 package it.ji.properties;
 
+import it.ji.annotations.Priority;
+
 import java.io.FileInputStream;
 import java.util.EnumMap;
 import java.util.Map;
@@ -42,4 +44,5 @@ public class Configurations {
     public boolean isVerbose() {
         return Boolean.parseBoolean((String) settingsMap.get(SettingsKeys.VERBOSE)) ;
     }
+
 }
