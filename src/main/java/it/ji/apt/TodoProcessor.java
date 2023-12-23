@@ -41,4 +41,8 @@ public class TodoProcessor extends AbstractProcessor {
         }
         return true;
     }
+
+    private void clickUpProcessing(Todo todo) {
+        System.out.println("Processing CLICKUP task");
+    }
 }

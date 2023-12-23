@@ -50,6 +50,15 @@ public class ClickUpAPI {
         }
     }
 
+    public String test(String listId) throws IOException {
+        Request request = new Request.Builder()
+                .url(BASE_URL + "/list/" + listId + "/field")
+                .addHeader("Authorization", API_TOKEN)
+                .build();
 
+        try (Response response = client.newCall(request).execute()) {
+            return response.body().string();
+        }
+    }
 }
 
