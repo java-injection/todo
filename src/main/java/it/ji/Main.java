@@ -12,6 +12,7 @@ public class Main {
         System.out.println("Hello world!");
         try {
             String tasks = ClickUpAPI.getInstance().test("216205964");
+            System.out.println("JSON: " + tasks);
             ClickUp_CustomFieldsResponse clickUpCustomFieldsResponse = DataConverter.fromJson(tasks, ClickUp_CustomFieldsResponse.class);
             for (ClickUp_Field customField : clickUpCustomFieldsResponse.getFields()) {
                 System.out.println(customField);

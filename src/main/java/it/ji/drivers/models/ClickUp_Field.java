@@ -9,9 +9,9 @@ public class ClickUp_Field {
     private boolean required;
     private boolean hide_from_guests;
     private long date_created;
-    private ClickUp_TypeConfig[] type_config;
+    private ClickUp_TypeConfig type_config;
 
-    public ClickUp_Field(String id, String name, String type, boolean required, boolean hide_from_guests, long date_created, ClickUp_TypeConfig[] type_config) {
+    public ClickUp_Field(String id, String name, String type, boolean required, boolean hide_from_guests, long date_created, ClickUp_TypeConfig type_config) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -72,11 +72,11 @@ public class ClickUp_Field {
         this.date_created = date_created;
     }
 
-    public ClickUp_TypeConfig[] getType_config() {
+    public ClickUp_TypeConfig getType_config() {
         return type_config;
     }
 
-    public void setType_config(ClickUp_TypeConfig[] type_config) {
+    public void setType_config(ClickUp_TypeConfig type_config) {
         this.type_config = type_config;
     }
 
@@ -89,7 +89,7 @@ public class ClickUp_Field {
                 ", required=" + required +
                 ", hide_from_guests=" + hide_from_guests +
                 ", date_created=" + date_created +
-                ", type_config=" + Arrays.toString(type_config) +
+                ", type_config=" + type_config +
                 '}';
     }
 }

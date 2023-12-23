@@ -1,10 +1,12 @@
 package it.ji.drivers.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.util.Arrays;
 
 @JsonRootName(value = "type_config")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ClickUp_TypeConfig {
     private boolean new_drop_down;
     private ClickUp_Option[] options;

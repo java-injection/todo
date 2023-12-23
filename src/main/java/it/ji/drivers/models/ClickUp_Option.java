@@ -1,5 +1,8 @@
 package it.ji.drivers.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ClickUp_Option {
     private String id;
     private String name;
