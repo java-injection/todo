@@ -1,6 +1,7 @@
 package it.ji.apt;
 
 import com.google.auto.service.AutoService;
+import it.ji.annotations.TaskManager;
 import it.ji.annotations.Todo;
 import it.ji.logic.PropertiesLogger;
 
@@ -23,6 +24,20 @@ public class TodoProcessor extends AbstractProcessor {
             Todo todo = elem.getAnnotation(Todo.class);
             processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,
                     "Method '" + elem.getSimpleName() + "' has a TODO: " + todo.description());
+            TaskManager taskManager = todo.taskManager();
+            switch (taskManager) {
+                case CLICKUP:
+                    System.out.println("Task manager is CLICKUP");
+                    break;
+                case MONDAY:
+                    System.out.println("Task manager is MONDAY");
+                    break;
+                case TRELLO:
+                    System.out.println("Task manager is TRELLO");
+                    break;
+                default:
+                    System.out.println("Task manager is not supported");
+            }
         }
         return true;
     }
